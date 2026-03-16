@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación - Eugenia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#fff9fb;
+      --bg2:#f7edf2;
+      --rose:#c6879c;
+      --rose-dark:#8f5a6d;
+      --gold:#c7a56a;
+      --text:#4a3840;
+      --white:rgba(255,255,255,.92);
+      --border:rgba(198,135,156,.24);
+      --shadow:0 22px 60px rgba(124,79,96,.14);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:'Montserrat', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.95) 0%, transparent 26%),
+        radial-gradient(circle at 90% 15%, rgba(249,232,238,.9) 0%, transparent 24%),
+        radial-gradient(circle at bottom right, rgba(255,242,246,.95) 0%, transparent 24%),
+        linear-gradient(135deg,var(--bg1),var(--bg2));
+      overflow-x:hidden;
+    }
+
+    .container{
+      position:relative;
+      z-index:1;
+      max-width:760px;
+      margin:auto;
+      padding:28px 18px 56px;
+    }
+
+    .hero{
+      position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.84));
+      border:1px solid rgba(255,255,255,.82);
+      box-shadow:var(--shadow);
+      border-radius:38px;
+      padding:56px 30px 42px;
+      text-align:center;
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow{
+      font-size:11px;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      color:var(--rose-dark);
+      margin-bottom:18px;
+      font-weight:500;
+    }
+
+    h1{
+      font-family:'Great Vibes', cursive;
+      font-size:96px;
+      line-height:1;
+      margin:0;
+      font-weight:400;
+      color:#8f5a6d;
+    }
+
+    .subtitle{
+      font-family:'Cormorant Garamond', serif;
+      font-size:34px;
+      font-weight:500;
+      margin:10px 0 0;
+      color:#6f4a59;
+    }
+
+    .lead{
+      margin:18px auto 0;
+      max-width:500px;
+      line-height:1.9;
+      font-size:14px;
+      color:#7a626c;
+      font-weight:300;
+    }
+
+    .divider{
+      width:180px;
+      height:1px;
+      margin:22px auto 0;
+      background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      border-radius:30px;
+      padding:30px 24px;
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .card.full{grid-column:1/-1}
+
+    .section-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:40px;
+      font-weight:600;
+      margin:0 0 14px;
+      color:#7b4d61;
+      text-align:center;
+    }
+
+    .date-main{
+      font-family:'Cormorant Garamond', serif;
+      font-size:38px;
+      color:#7b4d61;
+      margin:4px 0;
+      text-align:center;
+    }
+
+    .date-sub{
+      font-size:15px;
+      color:#8a6f79;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      text-align:center;
+    }
+
+    .info{
+      font-size:16px;
+      line-height:1.9;
+      text-align:center;
+    }
+
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .box{
+      background:linear-gradient(180deg, #fff, #fdf6f8);
+      border:1px solid rgba(201,138,161,.18);
+      border-radius:22px;
+      padding:18px 8px;
+      text-align:center;
+    }
+
+    .box strong{
+      display:block;
+      font-family:'Cormorant Garamond', serif;
+      font-size:38px;
+      color:var(--rose-dark);
+      line-height:1;
+    }
+
+    .box span{
+      display:block;
+      margin-top:6px;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      color:#8c737c;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+      margin-top:18px;
+    }
+
+    .btn{
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 28px;
+      min-height:52px;
+      border-radius:999px;
+      font-size:13px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:500;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      cursor:pointer;
+      border:none;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 24px rgba(157,97,119,.18);
+    }
+
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg, #c994a7, #8f5a6d);
+    }
+
+    .btn-secondary{
+      color:var(--rose-dark);
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(198,135,156,.22);
+    }
+
+    .footer-note{
+      margin-top:18px;
+      text-align:center;
+      font-size:13px;
+      color:#8c737c;
+    }
+
+    #pantallaInicio{
+      position:fixed;
+      inset:0;
+      background:linear-gradient(135deg,#fff9fb,#f7edf2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      z-index:9999;
+      text-align:center;
+      padding:30px;
+    }
+
+    #tituloInicio{
+      font-family:'Great Vibes', cursive;
+      color:#8f5a6d;
+      font-size:72px;
+      margin:0 0 12px 0;
+    }
+
+    #subInicio{
+      font-family:'Cormorant Garamond', serif;
+      font-size:28px;
+      color:#6f4a59;
+      margin-bottom:28px;
+    }
+
+    @media (max-width:700px){
+      h1{font-size:74px}
+      .subtitle{font-size:28px}
+      .grid{grid-template-columns:1fr}
+      .countdown{grid-template-columns:repeat(2,1fr)}
+      .hero{padding:48px 22px 36px}
+      #tituloInicio{font-size:58px}
+    }
+  </style>
+</head>
+<body>
+
+  <div id="pantallaInicio">
+    <div id="tituloInicio">Eugenia</div>
+    <div id="subInicio">Invitación especial</div>
+    <button id="abrirInvitacion" class="btn btn-primary">Abrir invitación</button>
+  </div>
+
+  <div class="container">
+    <section class="hero">
+      <div class="eyebrow">Invitación especial</div>
+      <h1>Eugenia</h1>
+      <div class="subtitle">¡Te invito a festejar conmigo!</div>
+      <div class="divider"></div>
+      <p class="lead">Una noche para celebrar, brindar y compartir un momento inolvidable. Me encantaría que me acompañes en este día tan especial.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#confirmar">Confirmar asistencia</a>
+        <a class="btn btn-secondary" href="#lugar">Ver detalles</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2 class="section-title">Fecha</h2>
+        <div class="date-main">Sábado 04 de Abril</div>
+        <div class="date-sub">20:30 h</div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Cuenta regresiva</h2>
+        <div class="countdown">
+          <div class="box"><strong id="days">00</strong><span>Días</span></div>
+          <div class="box"><strong id="hours">00</strong><span>Horas</span></div>
+          <div class="box"><strong id="minutes">00</strong><span>Minutos</span></div>
+          <div class="box"><strong id="seconds">00</strong><span>Segundos</span></div>
+        </div>
+      </section>
+
+      <section class="card full" id="lugar">
+        <h2 class="section-title">Lugar</h2>
+        <div class="info">
+          <strong>Salón Necopesca</strong><br>
+          Te espero para compartir una noche hermosa.
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" target="_blank" href="https://maps.app.goo.gl/M2GcHE2mt1SqsqjV8">Ver ubicación</a>
+        </div>
+      </section>
+
+      <section class="card full" id="confirmar">
+        <h2 class="section-title">Confirmar asistencia</h2>
+        <div class="info">Hacé clic en el botón para enviar tu confirmación por WhatsApp.</div>
+        <div class="actions">
+          <a class="btn btn-primary" target="_blank" href="https://wa.me/5492262659811?text=Hola%20Eugenia%2C%20confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20del%2004%20de%20abril.%20%F0%9F%8E%89">Confirmar por WhatsApp</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer-note">Con cariño, Eugenia ✨</div>
+  </div>
+
+  <audio id="musica" loop playsinline preload="auto">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const botonAbrir = document.getElementById("abrirInvitacion");
+    const pantallaInicio = document.getElementById("pantallaInicio");
+    const audio = document.getElementById("musica");
+
+    botonAbrir.addEventListener("click", async function () {
+      pantallaInicio.style.display = "none";
+      try {
+        audio.currentTime = 0;
+        await audio.play();
+      } catch (error) {
+        alert("El navegador bloqueó el audio. Tocá otra vez la pantalla.");
+      }
+    });
+
+    const eventDate = new Date("Apr 04, 2026 20:30:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      let distance = eventDate - now;
+      if (distance < 0) distance = 0;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
